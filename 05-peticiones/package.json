@@ -1,0 +1,19 @@
+{
+  "name": "05-peticiones",
+  "version": "1.0.0",
+  "description": "Esta es una prueba de npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm",
+    "request",
+    "node"
+  ],
+  "author": "Yael Ibarra",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}

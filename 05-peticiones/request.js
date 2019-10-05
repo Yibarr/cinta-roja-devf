@@ -119,23 +119,49 @@ const request = require('request');
 
 
 
-const miPromesa = new Promise((resolve,reject)=>{
+// const miPromesa = new Promise((resolve,reject)=>{
 
-    request.get('https://pokeapi.co/api/v2/pokemon/mewtwo/',(error,response,body)=>{
-        if(response.statusCode === 200){
-            const moves = JSON.parse(body).moves
+//     request.get('https://pokeapi.co/api/v2/pokemon/mewtwo/',(error,response,body)=>{
+//         if(response.statusCode === 200){
+//             const moves = JSON.parse(body).moves
 
-            for (let i = 0; i < moves.length; i++) {
-                console.log(moves[i].move.name)
-            }
-            // resolve(JSON.parse(body).moves)
-        }else{
-            reject(error)
-        }
+//             for (let i = 0; i < moves.length; i++) {
+//                 console.log(moves[i].move.name)
+//             }
+//             // resolve(JSON.parse(body).moves)
+//         }else{
+//             reject(error)
+//         }
 
-    })
-});
+//     })
+// });
 
-miPromesa
-    .then(res => console.log(res+' Desde el then'))
-    .catch(res => console.log(res+' Desde el catch'))
+// miPromesa
+//     .then(res => console.log(res+' Desde el then'))
+//     .catch(res => console.log(res+' Desde el catch'))
+
+    
+
+// const NASA_URL = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2019-10-02&end_date=2019-10-09&api_key=gKIbpePvOIvBTRBkaZEa86PqSMrE4SxqnblcX97X';
+
+
+// const tierraPrometida = new Promise((resolve,reject)=>{
+//     request.get(NASA_URL,(error,response,body)=>{
+//         const newNEO = Object.values(JSON.parse(body).near_earth_objects).map((date)=>{
+//             return date.filter(asteroid =>{
+//                 return asteroid.is_potentially_hazardous_asteroid
+//             })
+//         })
+
+//        resolve(newNEO)
+//     })
+// });
+
+// tierraPrometida
+//     .then(respuesta => console.log(respuesta))
+//     .catch(error => console.log(error))
+
+
+request.get('http://127.0.0.1:6660/',(error,response,body)=>{
+    console.log(JSON.parse(body).name)
+})

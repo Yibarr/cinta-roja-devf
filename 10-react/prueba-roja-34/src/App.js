@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter,Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import popper from 'popper.js';
 import $ from 'jquery'
@@ -13,9 +14,14 @@ import './App.css'
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <MovieUploader/>
-      <MovieContainer propiedad={'Esta es una propiedad'}/>
+      <BrowserRouter>
+        <Navbar/>
+          <main>
+            <Route exact path='/upload' component={MovieUploader}/>
+
+            <Route exact path='/movies' component={MovieContainer}/>
+          </main>
+      </BrowserRouter>
     </div>
   );
 }

@@ -15,11 +15,36 @@ const axios = require('axios');
 
 // request.get('https://pokeapi.co/api/v2/pokemon/mewtwo', showPokemon);
 
+
+// pokemonById('https://pokeapi.co/api/v2/pokemon/150')
+//     .then(res => {
+    //         console.log(res)
+    //         return res
+    //     })
+    //     .catch(error => {
+        //         console.log(error)
+        //         return error
+        //     });
+        
+        // const getPokeById = (id) => {
+        //         return axios.get(`${URL_BASE}/${id}`)
+        //     };
+            
+            
+        //     getPokeById(150)
+        //         .then( res => {
+        //                 console.log(res.data.name)
+        //                 return res.data.name
+        //             })
+        //             .catch( error => {
+        //                     console.log(error);
+        //                     return error
+        //                 })
 const URL_BASE = 'https://pokeapi.co/api/v2/pokemon';
 
-const pokemonById = (url) => {
+const pokemonById = (id) => {
     return new Promise((resolve,  reject)=>{
-        request.get(url , (error, response, body) => {
+        request.get(`${URL_BASE}/${id}` , (error, response, body) => {
             if(response.statusCode === 200) {
                 const pokemon = JSON.parse(body);
                 const pokeName = pokemon.name;
@@ -32,27 +57,32 @@ const pokemonById = (url) => {
     })
 };
 
-pokemonById('https://pokeapi.co/api/v2/pokemon/150')
-    .then(res => {
-        console.log(res)
-        return res
-    })
-    .catch(error => {
-        console.log(error)
-        return error
-    });
+ const getPId = async (id) => {
+     const x = await pokemonById(id) 
+     console.log(x)
+    return  x
 
-const getPokeById = (id) => {
-    return axios.get(`${URL_BASE}/${id}`)
+}
+
+// getPId(150)
+
+let data = [];
+
+const getMoves = async (id) => {
+     const x = await axios.get(`${URL_BASE}/${id}`)
+     const moves = x.data.moves;
+     const mappedMOves = moves.map(move => move.move.name)
+     data = mappedMOves
+
+     console.log(data.length)
 };
 
+getMoves(35)
 
-getPokeById(150)
-    .then( res => {
-        console.log(res.data.name)
-        return res.data.name
-    })
-    .catch( error => {
-        console.log(error);
-        return error
-    })
+console.log(data)
+
+
+// for (let index = 0; index < array.length; index++) {
+//     const element = array[index];
+    
+// }

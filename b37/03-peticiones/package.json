@@ -1,0 +1,20 @@
+{
+  "name": "pokepeticiones",
+  "version": "0.0.1",
+  "description": "Este es un proyecto prueba en node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "devf",
+    "request",
+    "http"
+  ],
+  "author": "Yael Ibarra",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "request": "^2.88.0"
+  }
+}

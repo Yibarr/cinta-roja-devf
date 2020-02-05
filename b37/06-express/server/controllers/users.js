@@ -1,3 +1,5 @@
+const express = require('express');
+const router = express.Router()
 
 // Crear un arreglo de 3 usuarios.
 /*
@@ -33,11 +35,19 @@ los 3 anteriores y el que se creo de la funcion newUser
 */
 
 // exports.newUser...
-const newUser = (user) => {
-  console.log(user);
-  dbUsers.push({...user});
-  return dbUsers;
-}
+
+
+router.post('/prueba', (req,res) => {
+    const body = req.body;
+    console.log(dbUsers)
+    dbUsers.push(body)
+    console.log(dbUsers)
+    res.send(dbUsers)
+})
+
+
+
+
 
 const updateUser = (id) => {
   // hacer una funcion que actualice el usuario del id que corresponda.
@@ -51,6 +61,4 @@ const deleteUser = (id) => {
 }
 
 // si uso exports.algo ya no necesito el module exports
-module.exports = {
-  newUser
-}
+module.exports = router;

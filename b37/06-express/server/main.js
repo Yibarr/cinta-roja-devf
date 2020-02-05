@@ -5,11 +5,19 @@ const app = express();
 // Para que sirve este middleware.
 app.use(express.json());
 
-const { newUser } = require('./controllers/users');
+const users = require('./controllers/users');
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+
+app.use('/users', users);
+
+
+app.listen(3000, () => {
+    console.log('Example app listening on port 3000!');
 });
+
+// app.get('/', (req, res) => {
+//     res.send('Hello World!');
+// });
 
 // Solucion 1:
 // app.post('/new/user', (req, res) => {
@@ -25,20 +33,18 @@ app.get('/', (req, res) => {
 
 // Solucion 2:
 // Desde postman mando el body.
-app.post('/new/user', (req, res) => {
-    const params = req.body;
-    const users = newUser(params);
-    res.json({users});
-});
+// app.post('/new/user', (req, res) => {
+//     const params = req.body;
+//     const users = newUser(params);
+//     res.json({users});
+// });
 
-app.patch('/user/:id', (req, res) => {
-    res.json({message: 'Hello World!'});
-});
+// app.patch('/user/:id', (req, res) => {
+//     res.json({message: 'Hello World!'});
+// });
 
-app.delete('/user/:id', (req, res) => {
-    res.json({message: 'Hello World!'});
-});
+// app.delete('/user/:id', (req, res) => {
+//     res.json({message: 'Hello World!'});
+// });
 
-app.listen(3000, () => {
-    console.log('Example app listening on port 3000!');
-});
+

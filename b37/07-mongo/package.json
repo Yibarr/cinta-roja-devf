@@ -1,0 +1,23 @@
+{
+  "name": "07-mongo",
+  "version": "1.0.0",
+  "description": "Esta es mi primera api en cinta rojaa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongo",
+    "node",
+    "mongoose"
+  ],
+  "author": "Yael Ibarra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.8.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

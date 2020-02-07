@@ -1,11 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+const app = express();
+const PORT = 6660;
+const URL_MONGO = "mongodb+srv://fer:cintaroja123@cluster0-2cnn6.mongodb.net/test?retryWrites=true&w=majority";
+
 const movies = require('./controllers/movies.js');
 
-const PORT = 6660;
-const app = express();
-const URL_MONGO = "mongodb+srv://fer:cintaroja123@cluster0-2cnn6.mongodb.net/test?retryWrites=true&w=majority";
+app.use(express.json());
+app.use('/movies', movies);
 
 mongoose.connect(URL_MONGO,{ useNewUrlParser: true, useUnifiedTopology: true }, (error) => {
     if(!error){
@@ -15,9 +18,10 @@ mongoose.connect(URL_MONGO,{ useNewUrlParser: true, useUnifiedTopology: true }, 
     }
 });
 
-app.use('/movies', movies);
-
-
 app.listen(PORT, () => {
     console.log(`Server initialized on PORT ${PORT}`);
 });
+
+
+
+

@@ -2,10 +2,10 @@
 const express = require('express');
 const app = express();
 
-// Para que sirve este middleware.
-app.use(express.json());
-
 const users = require('./controllers/users');
+// Para que sirve este middleware.
+// app.use(express.json());
+
 
 
 app.use('/users', users);

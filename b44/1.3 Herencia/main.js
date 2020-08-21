@@ -44,3 +44,5 @@ const feedPet = (pet, food = 'Acelgas') => {
 // feedPet(Gunter)
 
 console.log(Gunter, Milo);
+
+console.log(typeof(Gunter))

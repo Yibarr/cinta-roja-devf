@@ -89,59 +89,63 @@ perro.pelo = 'negro'
 
 
 
-// class BankAccount {
-//     constructor(name, initialAmount) {
-//         this.userName = name
-//         this.balance = initialAmount
-//     }
-//     // Get,  Set
-//     getUserName(){
-//       return this.userName
-//     }
-//     getBalance(){
-//       console.log(`Your total amount is $ ${this.balance}.`)
-//     }
-//     //Operations
-//     increaseBalance(amount){
-//         this.balance += amount
-//         console.log(this.balance)
-//     }
-//     makeTransfer(amount, userAccount){
-//         const validation = this.helperBalance(amount)
-//         if (validation) {
-//           this.balance -= amount
-//             const userName = userAccount.getUserName()
-//             userAccount.increaseBalance(amount)
-//             return `You now have $ ${this.balance}. Due to a deposit to ${userName}.`
-//         } else {
-//             return `You haven't enough resources.`
-//         }
-//     }
-//     buy(concept, price){
-//       const validation = this.helperBalance(price)
-//       if (validation) {
-//         this.balance -= price
-//         return `You now have $ ${this.balance}. Due to a purchase of ${concept}.`
-//       } else {
-//         return `You have not enough money to continue with the operation.`
-//       }
-//     }
-//     //Helper
-//     helperBalance(amount){
-//         if (this.balance < amount) {
-//             return false
-//         } else {
-//             return true
-//         }
-//     }
-// }
+class BankAccount {
+    constructor(name, initialAmount) {
+        this.userName = name
+        this.balance = initialAmount
+    }
+    // Get,  Set
+    enterNIP() {
+      
+    }
+  
+    getUserName(){
+      return this.userName
+    }
+    getBalance(){
+      console.log(`Your total amount is $ ${this.balance}.`)
+    }
+    //Operations
+    increaseBalance(amount){
+        this.balance += amount
+        console.log(this.balance)
+    }
+    makeTransfer(amount, userAccount){
+        const validation = this.helperBalance(amount)
+        if (validation) {
+          this.balance -= amount
+            const userName = userAccount.getUserName()
+            userAccount.increaseBalance(amount)
+            return `You now have $ ${this.balance}. Due to a deposit to ${userName}.`
+        } else {
+            return `You haven't enough resources.`
+        }
+    }
+    buy(concept, price){
+      const validation = this.helperBalance(price)
+      if (validation) {
+        this.balance -= price
+        return `You now have $ ${this.balance}. Due to a purchase of ${concept}.`
+      } else {
+        return `You have not enough money to continue with the operation.`
+      }
+    }
+    //Helper
+    helperBalance(amount){
+        if (this.balance < amount) {
+            return false
+        } else {
+            return true
+        }
+    }
+}
 
 
-// const GunterBankAccount = new BankAccount('Gunter', 4005)
+const GunterBankAccount = new BankAccount('Gunter', 4005)
 
-// const MiloBankAccount = new BankAccount('Milo', 5)
+const MiloBankAccount = new BankAccount('Milo', 5)
 
-
+GunterBankAccount.makeTransfer(2000, MiloBankAccount)
 
 //11.
 class Human {

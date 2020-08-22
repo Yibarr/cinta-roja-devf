@@ -79,3 +79,13 @@ console.log(Cinemex.playFeatureFilm(Earth))
 // }
 
 // feedDog(gato)
+
+
+const suma = (a, b) => a + b
+
+
+const operation = (callback, a, b) => {
+  return callback(a,b)
+}
+
+operation(suma, 1, 3)

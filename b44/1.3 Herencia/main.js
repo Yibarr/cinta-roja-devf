@@ -33,7 +33,7 @@ class Dog extends Pet {
 
 const Milo = new Dog('Milo', 'Banana', 'black')
 
-console.log(Milo.eat())
+// console.log(Milo.eat())
 
 
 const feedPet = (pet, food = 'Acelgas') => {
@@ -43,6 +43,12 @@ const feedPet = (pet, food = 'Acelgas') => {
 
 // feedPet(Gunter)
 
-console.log(Gunter, Milo);
+// console.log(Gunter, Milo);
 
-console.log(typeof(Gunter))
+// console.log(typeof(Gunter))
+
+
+const { favoriteFood } = Gunter
+
+console.log(favoriteFood);
+

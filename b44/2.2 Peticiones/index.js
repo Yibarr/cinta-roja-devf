@@ -53,12 +53,8 @@ const getDangerousAsteroids = () => {
         //   '2020-08-24': [],
         //   '2020-08-25': []
         // }
-
-
         const flatDates = NEOArr.flat()
-        //[[{},{},{}], [{},{},{}], [{},{},{}]] => [{},{},{}, {},{},{}, {},{},{}] 
-
-
+        //[[{},{},{}], [{},{},{}], [{},{},{}]] => [{},{},{},{},{},{},{},{},{}] 
         const dangerousAsteroids = flatDates.filter(asteroid => asteroid.is_potentially_hazardous_asteroid)
         //arreglo filtrado
         

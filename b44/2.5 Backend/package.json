@@ -1,0 +1,18 @@
+{
+  "name": "2.5-backend",
+  "version": "1.0.0",
+  "description": "Backend de prueba no conectado a db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "API"
+  ],
+  "author": "Yael Ibarra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

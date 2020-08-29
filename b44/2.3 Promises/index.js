@@ -112,12 +112,41 @@ const fetchMyApi = (id) => {
   
 }
 
-fetchMyApi()
-  .then(response => {
+// fetchMyApi()
+//   .then(response => {
     
-    const statusCode = response.status
-    console.log(response.data);
-    return response.data
+//     const statusCode = response.status
+//     console.log(response.data);
+//     return response.data
     
+//   })
+//   .catch(error => console.log(error.message))
+
+
+
+
+const getDangerousAsteroidsByDate = async (start_date, end_date, api_key) => {
+  const response = await axios.get(
+    `https://api.nasa.gov/neo/rest/v1/feed?start_date=${start_date}&end_date=${end_date}&api_key=${api_key}`
+  )
+
+  const near_earth_objects = response.data.near_earth_objects
+
+  const NEOEntries = Object.entries(near_earth_objects)
+  const obj = {}
+  NEOEntries.forEach(array => {
+    const key = array[0]
+    const value = array[1]
+    const filteredAsteroids= value.filter(asteroid => asteroid.is_potentially_hazardous_asteroid)
+    obj[key] = filteredAsteroids
   })
-  .catch(error => console.log(error.message))
+  console.log(obj);
+  return obj
+
+}
+
+getDangerousAsteroidsByDate('2020-08-18', '2020-08-24', '7s0ep6LwhAf8zcd0EIQDjK1TptDPWvNUIRIXF1S8')
+
+
+
+

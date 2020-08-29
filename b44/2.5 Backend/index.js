@@ -24,14 +24,12 @@ app.get('/pet/search', (req, res) => {
   const { search_query } = req.query
   res.send(search_query)
 })
-
+//localhos:3000/pet/search?search_query=hola&mascota=gunter
 //CRUD
 //Create post
 //Read get
 //Update put y patch
 //Delete delete
-
-
 app.listen(PORT, () => {
   console.log(`Aplicación inicializada en el puesrto: ${PORT}`);
 })

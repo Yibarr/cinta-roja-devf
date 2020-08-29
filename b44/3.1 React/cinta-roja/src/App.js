@@ -1,6 +1,7 @@
 import React from 'react';
 // import './App.css';
 import Saludo from './components/Saludo.jsx'
+import Boton from './components//Boton.jsx'
 
 function App() {
   return (
@@ -12,7 +13,10 @@ function App() {
       <Saludo/>
       <Saludo/>
       <Saludo/>
-      <Saludo/>
+      <Saludo />
+      <Boton/>
+      <Boton/>
+      <Boton/>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import './css/ColorSelect.css'
+import '../components/css/ColorSelect.css'
 
 const ColorSelect = () => {
   const [color , setColor] = useState('blue')

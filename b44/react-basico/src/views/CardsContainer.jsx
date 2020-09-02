@@ -13,7 +13,7 @@ const CardsContainer = () => {
     axios.get('https://api.giphy.com/v1/gifs/trending?api_key=7ejd73FIFeDTTXP814G3kYp9UameVcT7')
       .then(res => {
         setGifs(res.data.data)
-        console.log(gifs);
+        console.log(res.data.data);
       })
       .catch(err => console.log(err))
     return () => {

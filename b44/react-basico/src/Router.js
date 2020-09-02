@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 import CardsContainer from './views/CardsContainer.jsx'
 import ColorsContainer from './views/ColorsContainer.jsx'
+import AsteroidsContainer from './views/AsteroidsContainer.jsx'
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           <li>
             <Link to="/gifs">Gifs</Link>
           </li>
+          <li>
+            <Link to="/asteroids">Asteroides en peligro 3</Link>
+          </li>
         </ul>
       <Switch>
         <Route exact path="/">
@@ -25,6 +29,9 @@ function App() {
         </Route>
         <Route path="/gifs">
           <CardsContainer/>
+        </Route>
+        <Route path="/asteroids">
+          <AsteroidsContainer/>
         </Route>
         <Route>
           <h1>404 Not found</h1>

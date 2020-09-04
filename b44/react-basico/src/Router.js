@@ -9,14 +9,12 @@ import {
   Drawer,
   IconButton,
   AppBar,
-  Toolbar,
-  makeStyles,
-  useTheme
+  Toolbar
 } from '@material-ui/core'
 
 import MenuIcon from '@material-ui/icons/Menu';
 
-import CardsContainer from './views/CardsContainer.jsx'
+import CardsContainer from './views/CardsContainer/CardsContainer.jsx'
 import ColorsContainer from './views/ColorsContainer.jsx'
 import AsteroidsContainer from './views/AsteroidsContainer.jsx'
 

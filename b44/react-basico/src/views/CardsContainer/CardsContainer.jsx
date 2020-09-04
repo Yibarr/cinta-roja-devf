@@ -5,12 +5,14 @@ import {
   Container, 
   Grid,
   InputBase,
-  IconButton
+  IconButton,
+  LinearProgress
 } from '@material-ui/core'
 
 import SearchIcon from '@material-ui/icons/Search';
-import GifCard from '../components/GifCard/GifCard'
+import GifCard from '../../components/GifCard/GifCard'
 
+import './CardsContainer.css'
 
 const CardsContainer = () => {
   const [ gifs, setGifs ] = useState([])
@@ -46,6 +48,10 @@ const CardsContainer = () => {
   }
 
 
+  const showLinearProgress = () => {
+    if(loading) return <LinearProgress color="secondary" />
+  }
+
 
   return (
     <React.Fragment>
@@ -61,13 +67,14 @@ const CardsContainer = () => {
             <IconButton type="submit" aria-label="search">
               <SearchIcon />
             </IconButton>
+            {
+              showLinearProgress()
+            }
           </Grid>
         </Grid>
         <Grid container direction="row" alignItems="stretch" spacing={5}>
           {
-            loading 
-              ?  <h5>Cargando...</h5>
-              : gifs.map(gif => (
+               gifs.map(gif => (
                 <Grid item xs={12} sm={6} md={4} lg={3} key={gif.id}>
                   <GifCard src={gif.images.original.url} title={gif.title} />
                 </Grid>

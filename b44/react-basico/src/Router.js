@@ -8,6 +8,8 @@ import {
 import {
   Drawer,
   IconButton,
+  AppBar,
+  Toolbar,
   makeStyles,
   useTheme
 } from '@material-ui/core'
@@ -18,27 +20,7 @@ import CardsContainer from './views/CardsContainer.jsx'
 import ColorsContainer from './views/ColorsContainer.jsx'
 import AsteroidsContainer from './views/AsteroidsContainer.jsx'
 
-const drawerWidth = 240
-
-const useStyles = makeStyles(
-  theme => (
-    {
-      appBarShift: {
-        marginLeft: drawerWidth,
-        width: `calc(100% - ${drawerWidth}px)`,
-        transition: theme.transitions.create(
-          ['width', 'margin'],
-          {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.enteringScreen,
-          }
-       ),
-      },
-    }
-  )
-)
-
-
+import './App.css'
 
 function App() {
   const [ open, setOpen ] = useState(false)
@@ -47,29 +29,37 @@ function App() {
     <React.Fragment>
       <Router>
         <div>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="end"
-            onClick={ () => setOpen(true) }
-          >
-            <MenuIcon/>
-          </IconButton>
-          
-            <Switch>
-              <Route exact path="/">
-                <ColorsContainer/>
-              </Route>
-              <Route path="/gifs">
-                <CardsContainer/>
-              </Route>
-              <Route path="/asteroids">
-                <AsteroidsContainer/>
-              </Route>
-              <Route>
-                <h1>404 Not found</h1>
-              </Route>
-            </Switch>
+          <AppBar position="relative" className="nav_bar" color="secondary">
+            <Toolbar>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="end"
+                onClick={ () => setOpen(true) }
+              >
+                <MenuIcon/>
+              </IconButton>
+            </Toolbar>
+          </AppBar>
+
+
+
+          <Switch>
+            <Route exact path="/">
+              <ColorsContainer/>
+            </Route>
+            <Route path="/gifs">
+              <CardsContainer/>
+            </Route>
+            <Route path="/asteroids">
+              <AsteroidsContainer/>
+            </Route>
+            <Route>
+              <h1>404 Not found</h1>
+            </Route>
+          </Switch>
+
+
         </div>
         <Drawer
           variant="persistent"

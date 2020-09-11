@@ -33,9 +33,9 @@ const getPokemonById = (id) => {
 }
 
 
-// getPokemonById('ditto')
-//   .then(resolve => console.log(resolve))
-//   .catch(error => console.log(error))
+getPokemonById('ditto')
+  .then(resolve => console.log(resolve))
+  .catch(error => console.log(error))
 
 
 

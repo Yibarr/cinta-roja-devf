@@ -1,4 +1,4 @@
-// const text = "Este es un texto guardado en la constante texto"
+const text = "Este es un texto guardado en la constante texto"
 // var number = 9807
 // let boolean = true
 
@@ -62,22 +62,7 @@
 
 
 
-// console.log(animals);
-// animals.push(
-//   {
-//     name: 'Misha2',
-//     age: 1,
-//     favoriteFood: 'Banana'
-//   }
-// )
 
-// console.log(animals);
-
-// const emptyObj = {}
-
-// emptyObj.age = 23
-
-// console.log(emptyObj);
 
 // let animals = [
 //   {
@@ -101,6 +86,23 @@
 //     favoriteFood: 'Banana'
 //   }
 // ]
+
+// console.log(animals);
+// animals.push(
+//   {
+//     name: 'Misha2',
+//     age: 1,
+//     favoriteFood: 'Banana'
+//   }
+// )
+
+// console.log(animals);
+
+// const emptyObj = {}
+
+// emptyObj.age = 23
+
+// console.log(emptyObj);
 
 
 // const mappedAnimals = animals.map(animal => {
@@ -194,6 +196,6 @@ const perro = {
 
 // const perro = 'perro'
 
-perro.length = 2
+// perro.length = 2
 
-console.log(perro.length);
+// console.log(perro.length);

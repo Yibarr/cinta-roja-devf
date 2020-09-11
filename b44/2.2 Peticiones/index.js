@@ -1,10 +1,10 @@
-const request = require('request')
+const { get } = require('request')
 
 
 const URI = `https://pokeapi.co/api/v2`
 
 const getDitto = () => {
-  request.get(`${URI}/pokemon/ditto`, (error, response) => {
+  get(`${URI}/pokemon/ditto`, (error, response) => {
     if (response.statusCode === 200) {
       const parsedJson = JSON.parse(response.body)
       console.log(parsedJson.name);
@@ -15,7 +15,7 @@ const getDitto = () => {
 }
 
 const getPokemonById = (pokemonId) => {
-  request.get(`${URI}/pokemon/${pokemonId}`, (error, response, body) => {
+  get(`${URI}/pokemon/${pokemonId}`, (error, response, body) => {
     if (response.statusCode === 200) {
       const parsedJson = JSON.parse(response.body);
       console.log(`Información pokemon:`, parsedJson);
@@ -27,7 +27,7 @@ const getPokemonById = (pokemonId) => {
 
 
 const getPokemonMoves = (pokemonId) => {
-  request.get(`${URI}/pokemon/${pokemonId}`, (error, response, body) => {
+  get(`${URI}/pokemon/${pokemonId}`, (error, response, body) => {
     if (response.statusCode === 200) {
       const parsedJson = JSON.parse(response.body);
       const movesNames = parsedJson.moves.map(move => move.move.name)
@@ -41,7 +41,7 @@ const getPokemonMoves = (pokemonId) => {
 const NASA_URI = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2020-08-24&end_date=2020-08-30&api_key=7s0ep6LwhAf8zcd0EIQDjK1TptDPWvNUIRIXF1S8`
 
 const getDangerousAsteroids = () => {
-  request.get(
+  get(
     `${NASA_URI}`,
     (error, response) => {
       if (response.statusCode === 200) {
